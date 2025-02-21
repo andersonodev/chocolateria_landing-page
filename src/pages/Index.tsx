@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Coffee, MapPin } from "lucide-react";
+import { Menu, X, Coffee, MapPin, CakeSlice, Cup, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
@@ -14,6 +14,52 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const products = [
+    {
+      name: "Chocolate Quente Especial",
+      description: "Chocolate quente cremoso com chantilly e raspas de chocolate",
+      image: "/lovable-uploads/b5e32cbf-e35b-4914-a947-2feea0eca4c8.png"
+    },
+    {
+      name: "Picolé de Caramelo",
+      description: "Picolé artesanal de chocolate com recheio de caramelo",
+      image: "/lovable-uploads/ad3ef8bf-244f-4999-814c-dad4d8424b14.png"
+    },
+    {
+      name: "Milk-shake de Chocolate",
+      description: "Milk-shake cremoso com chocolate belga",
+      image: "/lovable-uploads/16ab67dd-cad7-443b-a253-e728d51d0e50.png"
+    },
+    {
+      name: "Cheesecake de Morango",
+      description: "Cheesecake com cobertura de morango e chocolate",
+      image: "/lovable-uploads/c53ebb13-61ee-42c3-afc4-8f33659c4bca.png"
+    },
+    {
+      name: "Torta Chocolate com Nozes",
+      description: "Torta de chocolate belga com nozes crocantes",
+      image: "/lovable-uploads/9f7e7fc6-d551-4076-ba00-e7ce5af89b11.png"
+    },
+    {
+      name: "Torta de Morango",
+      description: "Torta de chocolate com morangos frescos",
+      image: "/lovable-uploads/e162515f-b600-48eb-9c4c-cafdf7dba804.png"
+    }
+  ];
+
+  const beverages = [
+    {
+      name: "Chocolate Quente Clássico",
+      description: "Chocolate quente com chantilly e canela",
+      image: "/lovable-uploads/7bbc336e-f84f-466d-ad6e-2d3481753b50.png"
+    },
+    {
+      name: "Frappuccino de Chocolate",
+      description: "Bebida gelada com chocolate e café",
+      image: "/lovable-uploads/775f4985-a98f-4bc4-a4cb-851be536e55f.png"
+    }
+  ];
 
   return (
     <div className="min-h-screen">
@@ -117,27 +163,35 @@ const Index = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-coffee-500 to-transparent"></div>
         </div>
         <div className="container mx-auto px-4 py-20 text-center relative">
-          <h1 className="font-serif text-5xl md:text-7xl text-coffee-800 mb-6 fade-in">
-            Chocolateria
-            <br />
-            Sabor e Prazer
-          </h1>
-          <p className="text-xl md:text-2xl text-coffee-600 mb-8 fade-in" style={{ animationDelay: "0.2s" }}>
-            Experiências únicas desde 2017
-          </p>
-          <div className="flex justify-center space-x-4 fade-in" style={{ animationDelay: "0.4s" }}>
-            <a
-              href="#produtos"
-              className="bg-coffee-700 text-white px-8 py-3 rounded-full hover:bg-coffee-800 transition-colors duration-300"
-            >
-              Nossos Produtos
-            </a>
-            <a
-              href="#sobre"
-              className="border-2 border-coffee-700 text-coffee-700 px-8 py-3 rounded-full hover:bg-coffee-50 transition-colors duration-300"
-            >
-              Conheça-nos
-            </a>
+          <div className="flex flex-col items-center justify-center space-y-6">
+            <div className="w-32 h-32 bg-coffee-800 rounded-full flex items-center justify-center mb-6 animate-fadeIn">
+              <span className="font-serif text-4xl text-white">S&P</span>
+            </div>
+            <h1 className="font-serif text-5xl md:text-7xl text-coffee-800 mb-6 fade-in">
+              Chocolateria
+              <br />
+              Sabor e Prazer
+            </h1>
+            <p className="text-xl md:text-2xl text-coffee-600 mb-8 fade-in max-w-2xl" style={{ animationDelay: "0.2s" }}>
+              Onde cada momento é uma explosão de sabores únicos. Desde 2017, 
+              transformando chocolate em experiências inesquecíveis.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 fade-in" style={{ animationDelay: "0.4s" }}>
+              <a
+                href="#produtos"
+                className="bg-coffee-700 text-white px-8 py-3 rounded-full hover:bg-coffee-800 transition-colors duration-300 flex items-center"
+              >
+                <CakeSlice className="mr-2" />
+                Nossos Produtos
+              </a>
+              <a
+                href="#sobre"
+                className="border-2 border-coffee-700 text-coffee-700 px-8 py-3 rounded-full hover:bg-coffee-50 transition-colors duration-300 flex items-center"
+              >
+                <Coffee className="mr-2" />
+                Conheça-nos
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -198,24 +252,49 @@ const Index = () => {
           <h2 className="font-serif text-4xl text-coffee-800 text-center mb-12">
             Nossos Produtos
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Product Cards */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <img
-                src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9"
-                alt="Trufas Especiais"
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="font-serif text-xl text-coffee-800 mb-2">
-                  Trufas Especiais
-                </h3>
-                <p className="text-coffee-600">
-                  Deliciosas trufas artesanais com sabores únicos
-                </p>
+          
+          {/* Doces e Tortas */}
+          <h3 className="font-serif text-2xl text-coffee-700 mb-8">Doces e Tortas</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {products.map((product, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-serif text-xl text-coffee-800 mb-2">
+                    {product.name}
+                  </h3>
+                  <p className="text-coffee-600">
+                    {product.description}
+                  </p>
+                </div>
               </div>
-            </div>
-            {/* More product cards... */}
+            ))}
+          </div>
+
+          {/* Bebidas */}
+          <h3 className="font-serif text-2xl text-coffee-700 mb-8">Bebidas Especiais</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {beverages.map((beverage, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                <img
+                  src={beverage.image}
+                  alt={beverage.name}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="font-serif text-xl text-coffee-800 mb-2">
+                    {beverage.name}
+                  </h3>
+                  <p className="text-coffee-600">
+                    {beverage.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -230,30 +309,41 @@ const Index = () => {
             Nosso Espaço
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"
-                alt="Nosso Espaço"
-                className="w-full h-[500px] object-cover rounded-lg shadow-lg"
-              />
-            </div>
             <div className="space-y-6">
               <h3 className="font-serif text-3xl text-coffee-800">
                 Um Ambiente Acolhedor
               </h3>
               <p className="text-coffee-600 leading-relaxed">
-                Nosso espaço foi cuidadosamente projetado para proporcionar
-                momentos únicos de prazer e conforto. Venha nos visitar e
-                desfrute de nossas delícias em um ambiente acolhedor e
-                sofisticado.
+                Nossa chocolateria foi cuidadosamente projetada para proporcionar
+                momentos únicos de prazer e conforto. Em um ambiente que combina
+                elegância e aconchego, você pode desfrutar de nossas delícias
+                enquanto se perde em conversas agradáveis.
               </p>
-              <a
-                href="#localizacao"
-                className="inline-flex items-center text-coffee-700 hover:text-coffee-800 transition-colors duration-200"
-              >
-                <MapPin className="mr-2" />
-                Como Chegar
-              </a>
+              <div className="grid grid-cols-2 gap-4 mt-6">
+                <div className="flex items-center space-x-2 text-coffee-700">
+                  <Coffee className="w-5 h-5" />
+                  <span>Café Premium</span>
+                </div>
+                <div className="flex items-center space-x-2 text-coffee-700">
+                  <Clock className="w-5 h-5" />
+                  <span>Ambiente Climatizado</span>
+                </div>
+                <div className="flex items-center space-x-2 text-coffee-700">
+                  <Cup className="w-5 h-5" />
+                  <span>Menu Exclusivo</span>
+                </div>
+                <div className="flex items-center space-x-2 text-coffee-700">
+                  <MapPin className="w-5 h-5" />
+                  <span>Localização Prime</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <img
+                src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGNob2NvbGF0ZSUyMHNob3B8ZW58MHx8MHx8&w=1000&q=80"
+                alt="Nosso Espaço"
+                className="w-full h-[500px] object-cover rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>
