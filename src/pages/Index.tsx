@@ -72,11 +72,8 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <a href="#" className="flex items-center space-x-2">
-              <div className="w-12 h-12 bg-coffee-800 rounded-full flex items-center justify-center rotate-12 hover:rotate-0 transition-transform duration-300">
-                <span className="font-serif text-xl text-white">S&P</span>
-              </div>
-              <span className="font-serif text-2xl text-coffee-800">
+            <a href="#" className="flex items-center">
+              <span className="font-serif text-2xl text-coffee-800 hover:text-coffee-600 transition-colors duration-300">
                 Chocolateria Sabor e Prazer
               </span>
             </a>
@@ -163,13 +160,10 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 py-20 text-center relative">
           <div className="flex flex-col items-center justify-center space-y-6">
-            <div className="w-32 h-32 bg-coffee-800 rounded-full flex items-center justify-center mb-6 animate-bounce">
-              <span className="font-serif text-4xl text-white transform hover:scale-110 transition-transform duration-300">S&P</span>
-            </div>
             <h1 className="font-serif text-5xl md:text-7xl text-coffee-800 mb-6 fade-in">
               Chocolateria
               <br />
-              Sabor e Prazer
+              <span className="text-coffee-600">Sabor e Prazer</span>
             </h1>
             <p className="text-xl md:text-2xl text-coffee-600 mb-8 fade-in max-w-2xl" style={{ animationDelay: "0.2s" }}>
               Onde cada momento é uma explosão de sabores únicos. Desde 2017, 
