@@ -1,6 +1,5 @@
-
 import { useState, useEffect } from "react";
-import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater } from "lucide-react";
+import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
@@ -63,7 +62,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Navbar */}
       <nav
         className={cn(
           "fixed w-full z-50 transition-all duration-300",
@@ -74,17 +72,15 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
             <a href="#" className="flex items-center space-x-2">
               <div className="w-12 h-12 bg-coffee-800 rounded-full flex items-center justify-center rotate-12 hover:rotate-0 transition-transform duration-300">
                 <span className="font-serif text-xl text-white">S&P</span>
               </div>
               <span className="font-serif text-2xl text-coffee-800">
-                Sabor e Prazer
+                Chocolateria Sabor e Prazer
               </span>
             </a>
 
-            {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               <a href="#home" className="nav-link">
                 Home
@@ -103,7 +99,6 @@ const Index = () => {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               className="md:hidden text-coffee-800"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -113,7 +108,6 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
         <div
           className={cn(
             "md:hidden absolute w-full bg-white/95 backdrop-blur-md transition-all duration-300",
@@ -160,7 +154,6 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section
         id="home"
         className="min-h-screen flex items-center justify-center bg-gradient-to-b from-chocolate-50 to-white relative overflow-hidden"
@@ -202,7 +195,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section
         id="sobre"
         className="py-20 bg-white"
@@ -249,7 +241,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Products Section */}
       <section
         id="produtos"
         className="py-20 bg-gradient-to-b from-white to-chocolate-50"
@@ -259,16 +250,23 @@ const Index = () => {
             Nossos Produtos
           </h2>
           
-          {/* Doces e Tortas */}
           <h3 className="font-serif text-2xl text-coffee-700 mb-8">Doces e Tortas</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {products.map((product, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-64 object-cover"
-                />
+                <div className="relative overflow-hidden group">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <CakeSlice className="text-white w-8 h-8 mb-2 mx-auto" />
+                      <p className="text-white text-sm font-medium">Ver Detalhes</p>
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl text-coffee-800 mb-2">
                     {product.name}
@@ -281,16 +279,23 @@ const Index = () => {
             ))}
           </div>
 
-          {/* Bebidas */}
           <h3 className="font-serif text-2xl text-coffee-700 mb-8">Bebidas Especiais</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {beverages.map((beverage, index) => (
               <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-                <img
-                  src={beverage.image}
-                  alt={beverage.name}
-                  className="w-full h-64 object-cover"
-                />
+                <div className="relative overflow-hidden group">
+                  <img
+                    src={beverage.image}
+                    alt={beverage.name}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <Coffee className="text-white w-8 h-8 mb-2 mx-auto" />
+                      <p className="text-white text-sm font-medium">Ver Detalhes</p>
+                    </div>
+                  </div>
+                </div>
                 <div className="p-6">
                   <h3 className="font-serif text-xl text-coffee-800 mb-2">
                     {beverage.name}
@@ -305,7 +310,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Our Space Section */}
       <section
         id="espaco"
         className="py-20 bg-white"
@@ -355,7 +359,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Location Section */}
       <section
         id="localizacao"
         className="py-20 bg-chocolate-50"
@@ -397,7 +400,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-coffee-800 text-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -418,7 +420,30 @@ const Index = () => {
             <div>
               <h4 className="font-serif text-xl mb-4">Siga-nos</h4>
               <div className="flex space-x-4">
-                {/* Add social media links here */}
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-coffee-200 transition-colors duration-200"
+                >
+                  <Facebook className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-coffee-200 transition-colors duration-200"
+                >
+                  <Instagram className="w-6 h-6" />
+                </a>
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-coffee-200 transition-colors duration-200"
+                >
+                  <Youtube className="w-6 h-6" />
+                </a>
               </div>
             </div>
           </div>
