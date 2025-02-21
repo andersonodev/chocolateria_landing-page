@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Coffee, MapPin, CakeSlice, Cup, Clock } from "lucide-react";
+import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
@@ -74,8 +74,14 @@ const Index = () => {
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <a href="#" className="font-serif text-2xl text-coffee-800">
-              Sabor e Prazer
+            {/* Logo */}
+            <a href="#" className="flex items-center space-x-2">
+              <div className="w-12 h-12 bg-coffee-800 rounded-full flex items-center justify-center rotate-12 hover:rotate-0 transition-transform duration-300">
+                <span className="font-serif text-xl text-white">S&P</span>
+              </div>
+              <span className="font-serif text-2xl text-coffee-800">
+                Sabor e Prazer
+              </span>
             </a>
 
             {/* Desktop Menu */}
@@ -164,8 +170,8 @@ const Index = () => {
         </div>
         <div className="container mx-auto px-4 py-20 text-center relative">
           <div className="flex flex-col items-center justify-center space-y-6">
-            <div className="w-32 h-32 bg-coffee-800 rounded-full flex items-center justify-center mb-6 animate-fadeIn">
-              <span className="font-serif text-4xl text-white">S&P</span>
+            <div className="w-32 h-32 bg-coffee-800 rounded-full flex items-center justify-center mb-6 animate-bounce">
+              <span className="font-serif text-4xl text-white transform hover:scale-110 transition-transform duration-300">S&P</span>
             </div>
             <h1 className="font-serif text-5xl md:text-7xl text-coffee-800 mb-6 fade-in">
               Chocolateria
@@ -179,14 +185,14 @@ const Index = () => {
             <div className="flex flex-wrap justify-center gap-4 fade-in" style={{ animationDelay: "0.4s" }}>
               <a
                 href="#produtos"
-                className="bg-coffee-700 text-white px-8 py-3 rounded-full hover:bg-coffee-800 transition-colors duration-300 flex items-center"
+                className="bg-coffee-700 text-white px-8 py-3 rounded-full hover:bg-coffee-800 transition-colors duration-300 flex items-center transform hover:scale-105"
               >
                 <CakeSlice className="mr-2" />
                 Nossos Produtos
               </a>
               <a
                 href="#sobre"
-                className="border-2 border-coffee-700 text-coffee-700 px-8 py-3 rounded-full hover:bg-coffee-50 transition-colors duration-300 flex items-center"
+                className="border-2 border-coffee-700 text-coffee-700 px-8 py-3 rounded-full hover:bg-coffee-50 transition-colors duration-300 flex items-center transform hover:scale-105"
               >
                 <Coffee className="mr-2" />
                 Conheça-nos
@@ -329,7 +335,7 @@ const Index = () => {
                   <span>Ambiente Climatizado</span>
                 </div>
                 <div className="flex items-center space-x-2 text-coffee-700">
-                  <Cup className="w-5 h-5" />
+                  <GlassWater className="w-5 h-5" />
                   <span>Menu Exclusivo</span>
                 </div>
                 <div className="flex items-center space-x-2 text-coffee-700">
