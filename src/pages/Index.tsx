@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -71,32 +72,32 @@ const Index = () => {
         )}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16">
             <a 
               href="#" 
               className="group flex items-center"
             >
               <img 
-                src="/lovable-uploads/958b4a27-5aea-49bb-bf36-6764a52b1834.png" 
+                src="/lovable-uploads/35066855-02c3-41e3-b125-d2cc0a2a5fe2.png" 
                 alt="Chocolateria Sabor e Prazer"
-                className="h-14 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                className="h-12 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
               />
             </a>
 
             <div className="hidden md:flex space-x-6">
-              <a href="#home" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#home" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Home
               </a>
-              <a href="#sobre" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#sobre" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Sobre
               </a>
-              <a href="#produtos" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#produtos" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Produtos
               </a>
-              <a href="#espaco" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#espaco" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Nosso Espaço
               </a>
-              <a href="#localizacao" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#localizacao" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Localização
               </a>
             </div>
@@ -105,7 +106,7 @@ const Index = () => {
               className="md:hidden text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
         </div>
@@ -119,35 +120,35 @@ const Index = () => {
           <div className="container mx-auto px-4 py-4 space-y-4">
             <a
               href="#home"
-              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a
               href="#sobre"
-              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Sobre
             </a>
             <a
               href="#produtos"
-              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Produtos
             </a>
             <a
               href="#espaco"
-              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Nosso Espaço
             </a>
             <a
               href="#localizacao"
-              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Localização
@@ -158,11 +159,11 @@ const Index = () => {
 
       <section
         id="home"
-        className="min-h-[90vh] hero-gradient relative overflow-hidden"
+        className="min-h-screen w-full flex items-center justify-center hero-gradient relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-coffee-500/10 to-transparent"></div>
-        <div className="container mx-auto px-4 h-full flex items-center justify-center">
-          <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10 px-4">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10">
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-coffee-800 mb-4 fade-in leading-tight">
               Arte em Forma de
               <span className="block text-coffee-600 mt-2">Chocolate</span>
