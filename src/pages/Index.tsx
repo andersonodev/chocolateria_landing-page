@@ -66,12 +66,12 @@ const Index = () => {
         className={cn(
           "fixed w-full z-50 transition-all duration-500",
           isScrolled
-            ? "bg-white/90 backdrop-blur-md shadow-md"
-            : "bg-transparent"
+            ? "bg-coffee-800/95 backdrop-blur-md shadow-md"
+            : "bg-coffee-800/80 backdrop-blur-sm"
         )}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-24">
+          <div className="flex items-center justify-between h-20">
             <a 
               href="#" 
               className="group flex items-center"
@@ -79,30 +79,30 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/958b4a27-5aea-49bb-bf36-6764a52b1834.png" 
                 alt="Chocolateria Sabor e Prazer"
-                className="h-16 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                className="h-14 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
               />
             </a>
 
-            <div className="hidden md:flex space-x-8">
-              <a href="#home" className="nav-link text-lg hover:text-coffee-600 transition-all duration-300 transform hover:-translate-y-0.5">
+            <div className="hidden md:flex space-x-6">
+              <a href="#home" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Home
               </a>
-              <a href="#sobre" className="nav-link text-lg hover:text-coffee-600 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#sobre" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Sobre
               </a>
-              <a href="#produtos" className="nav-link text-lg hover:text-coffee-600 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#produtos" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Produtos
               </a>
-              <a href="#espaco" className="nav-link text-lg hover:text-coffee-600 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#espaco" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Nosso Espaço
               </a>
-              <a href="#localizacao" className="nav-link text-lg hover:text-coffee-600 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#localizacao" className="nav-link text-white text-base hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Localização
               </a>
             </div>
 
             <button
-              className="md:hidden text-coffee-800 hover:text-coffee-600 transition-all duration-300 transform hover:scale-110"
+              className="md:hidden text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -112,42 +112,42 @@ const Index = () => {
 
         <div
           className={cn(
-            "md:hidden absolute w-full bg-white/90 backdrop-blur-md transition-all duration-300",
+            "md:hidden absolute w-full bg-coffee-800/95 backdrop-blur-md transition-all duration-300",
             isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
           )}
         >
           <div className="container mx-auto px-4 py-4 space-y-4">
             <a
               href="#home"
-              className="block nav-link text-lg transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </a>
             <a
               href="#sobre"
-              className="block nav-link text-lg transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Sobre
             </a>
             <a
               href="#produtos"
-              className="block nav-link text-lg transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Produtos
             </a>
             <a
               href="#espaco"
-              className="block nav-link text-lg transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Nosso Espaço
             </a>
             <a
               href="#localizacao"
-              className="block nav-link text-lg transition-all duration-300 hover:translate-x-2"
+              className="block text-white hover:text-coffee-200 text-base transition-all duration-300 hover:translate-x-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Localização
@@ -158,31 +158,31 @@ const Index = () => {
 
       <section
         id="home"
-        className="min-h-screen hero-gradient relative overflow-hidden"
+        className="min-h-[90vh] hero-gradient relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-coffee-500/10 to-transparent"></div>
-        <div className="container mx-auto px-4 h-screen flex items-center justify-center">
-          <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl text-coffee-800 mb-6 fade-in leading-tight">
+        <div className="container mx-auto px-4 h-full flex items-center justify-center">
+          <div className="max-w-3xl mx-auto text-center space-y-6 relative z-10 px-4">
+            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-coffee-800 mb-4 fade-in leading-tight">
               Arte em Forma de
               <span className="block text-coffee-600 mt-2">Chocolate</span>
             </h1>
-            <p className="text-xl md:text-2xl text-coffee-700 mb-12 fade-in max-w-2xl mx-auto leading-relaxed" style={{ animationDelay: "0.2s" }}>
+            <p className="text-lg md:text-xl text-coffee-700 mb-8 fade-in max-w-2xl mx-auto leading-relaxed" style={{ animationDelay: "0.2s" }}>
               Desde 2017, transformando momentos em memórias doces e inesquecíveis com nossa chocolateria artesanal.
             </p>
-            <div className="flex flex-wrap justify-center gap-6 fade-in" style={{ animationDelay: "0.4s" }}>
+            <div className="flex flex-wrap justify-center gap-4 fade-in" style={{ animationDelay: "0.4s" }}>
               <a
                 href="#produtos"
-                className="bg-coffee-700 text-white px-8 py-4 rounded-full hover:bg-coffee-800 transition-all duration-300 flex items-center transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-coffee-700 text-white px-6 py-3 rounded-full hover:bg-coffee-800 transition-all duration-300 flex items-center transform hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base"
               >
-                <CakeSlice className="mr-2 h-5 w-5" />
+                <CakeSlice className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 Conheça Nossos Produtos
               </a>
               <a
                 href="#sobre"
-                className="bg-white/90 backdrop-blur-sm text-coffee-700 border-2 border-coffee-700 px-8 py-4 rounded-full hover:bg-coffee-50 transition-all duration-300 flex items-center transform hover:scale-105 shadow-lg hover:shadow-xl"
+                className="bg-white/90 backdrop-blur-sm text-coffee-700 border-2 border-coffee-700 px-6 py-3 rounded-full hover:bg-coffee-50 transition-all duration-300 flex items-center transform hover:scale-105 shadow-lg hover:shadow-xl text-sm md:text-base"
               >
-                <Coffee className="mr-2 h-5 w-5" />
+                <Coffee className="mr-2 h-4 w-4 md:h-5 md:w-5" />
                 Nossa História
               </a>
             </div>
@@ -193,42 +193,42 @@ const Index = () => {
 
       <section
         id="sobre"
-        className="py-24 bg-white relative overflow-hidden"
+        className="py-16 md:py-20 bg-white relative overflow-hidden"
       >
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-5xl text-coffee-800 mb-8">Nossa História</h2>
-            <p className="text-lg text-coffee-600 mb-12 leading-relaxed">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-serif text-3xl md:text-4xl text-coffee-800 mb-6">Nossa História</h2>
+            <p className="text-base md:text-lg text-coffee-600 mb-10 leading-relaxed">
               Desde 2017, a Chocolateria Sabor e Prazer tem se dedicado a criar
               momentos únicos através dos mais finos chocolates artesanais.
               Nossa paixão pela excelência e compromisso com a qualidade nos
               tornaram referência em delícias chocolatadas.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
-              <div className="p-8 bg-chocolate-50 rounded-2xl card-hover">
-                <Coffee className="w-12 h-12 text-coffee-700 mx-auto mb-4" />
-                <h3 className="font-serif text-xl text-coffee-800 mb-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="p-6 bg-chocolate-50 rounded-xl card-hover">
+                <Coffee className="w-10 h-10 text-coffee-700 mx-auto mb-3" />
+                <h3 className="font-serif text-lg text-coffee-800 mb-2">
                   Qualidade Premium
                 </h3>
-                <p className="text-coffee-600">
+                <p className="text-coffee-600 text-sm">
                   Ingredientes selecionados e processos artesanais
                 </p>
               </div>
-              <div className="p-8 bg-chocolate-50 rounded-2xl card-hover">
-                <Clock className="w-12 h-12 text-coffee-700 mx-auto mb-4" />
-                <h3 className="font-serif text-xl text-coffee-800 mb-3">
+              <div className="p-6 bg-chocolate-50 rounded-xl card-hover">
+                <Clock className="w-10 h-10 text-coffee-700 mx-auto mb-3" />
+                <h3 className="font-serif text-lg text-coffee-800 mb-2">
                   Tradição
                 </h3>
-                <p className="text-coffee-600">
+                <p className="text-coffee-600 text-sm">
                   Anos de experiência em chocolate artesanal
                 </p>
               </div>
-              <div className="p-8 bg-chocolate-50 rounded-2xl card-hover">
-                <CakeSlice className="w-12 h-12 text-coffee-700 mx-auto mb-4" />
-                <h3 className="font-serif text-xl text-coffee-800 mb-3">
+              <div className="p-6 bg-chocolate-50 rounded-xl card-hover sm:col-span-2 md:col-span-1">
+                <CakeSlice className="w-10 h-10 text-coffee-700 mx-auto mb-3" />
+                <h3 className="font-serif text-lg text-coffee-800 mb-2">
                   Inovação
                 </h3>
-                <p className="text-coffee-600">
+                <p className="text-coffee-600 text-sm">
                   Criações únicas e sabores exclusivos
                 </p>
               </div>

@@ -36,10 +36,10 @@
     @apply bg-background text-foreground;
   }
   .nav-link {
-    @apply relative text-coffee-800 hover:text-coffee-600 transition-colors duration-200;
+    @apply relative hover:text-coffee-200 transition-colors duration-200;
   }
   .nav-link::after {
-    @apply content-[''] absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-coffee-600 origin-bottom-right transition-transform duration-300;
+    @apply content-[''] absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-coffee-200 origin-bottom-right transition-transform duration-300;
   }
   .nav-link:hover::after {
     @apply scale-x-100 origin-bottom-left;
