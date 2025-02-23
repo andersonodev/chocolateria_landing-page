@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -75,12 +74,13 @@ const Index = () => {
           <div className="flex items-center justify-between h-20">
             <a 
               href="#" 
-              className="group flex items-center space-x-2"
+              className="group flex items-center"
             >
-              <span className="font-serif text-3xl text-coffee-800 group-hover:text-coffee-600 transition-all duration-300">
-                Chocolateria
-                <span className="text-coffee-600 group-hover:text-coffee-800"> Sabor e Prazer</span>
-              </span>
+              <img 
+                src="/lovable-uploads/958b4a27-5aea-49bb-bf36-6764a52b1834.png" 
+                alt="Chocolateria Sabor e Prazer"
+                className="h-12 transition-transform duration-300 group-hover:scale-105"
+              />
             </a>
 
             <div className="hidden md:flex space-x-8">
