@@ -72,19 +72,19 @@ const Index = () => {
         )}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
+          <div className="flex items-center justify-between min-h-[4.5rem]">
             <a 
               href="#" 
-              className="group flex items-center"
+              className="group flex items-center -my-2"
             >
               <img 
                 src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                 alt="Chocolateria Sabor e Prazer"
-                className="h-14 transition-all duration-300 group-hover:scale-105"
+                className="h-20 w-auto transition-all duration-300 group-hover:scale-105"
               />
             </a>
 
-            <div className="hidden md:flex space-x-6">
+            <div className="hidden md:flex space-x-8">
               <a href="#home" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Home
               </a>
@@ -106,7 +106,7 @@ const Index = () => {
               className="md:hidden text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110 p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
@@ -125,64 +125,64 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                   alt="Chocolateria Sabor e Prazer"
-                  className="h-12 transition-all duration-300 group-hover:scale-105"
+                  className="h-16 w-auto transition-all duration-300 group-hover:scale-105"
                 />
               </a>
               <button
                 className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110 p-2"
                 onClick={() => setIsMenuOpen(false)}
               >
-                <X size={20} />
+                <X size={24} />
               </button>
             </div>
 
             <div className="flex flex-col items-center justify-center flex-grow gap-8 p-4">
               <a
                 href="#home"
-                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </a>
               <a
                 href="#sobre"
-                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Sobre
               </a>
               <a
                 href="#produtos"
-                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Produtos
               </a>
               <a
                 href="#espaco"
-                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Nosso Espaço
               </a>
               <a
                 href="#localizacao"
-                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Localização
               </a>
             </div>
 
-            <div className="p-4 border-t border-coffee-700">
-              <div className="flex justify-center space-x-6">
+            <div className="p-6 border-t border-coffee-700">
+              <div className="flex justify-center space-x-8">
                 <a 
                   href="https://facebook.com" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
                 >
-                  <Facebook size={20} />
+                  <Facebook size={24} />
                 </a>
                 <a 
                   href="https://instagram.com" 
@@ -190,7 +190,7 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
                 >
-                  <Instagram size={20} />
+                  <Instagram size={24} />
                 </a>
                 <a 
                   href="https://youtube.com" 
@@ -198,7 +198,7 @@ const Index = () => {
                   rel="noopener noreferrer"
                   className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
                 >
-                  <Youtube size={20} />
+                  <Youtube size={24} />
                 </a>
               </div>
             </div>
@@ -208,7 +208,7 @@ const Index = () => {
 
       <section
         id="home"
-        className="min-h-screen w-full flex items-center justify-center hero-gradient relative overflow-hidden"
+        className="min-h-screen w-full flex items-center justify-center hero-gradient relative overflow-hidden pt-24"
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-coffee-500/10 to-transparent"></div>
         <div className="container mx-auto px-4">
