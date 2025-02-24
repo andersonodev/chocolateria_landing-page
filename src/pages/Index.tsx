@@ -67,8 +67,8 @@ const Index = () => {
         className={cn(
           "fixed w-full z-50 transition-all duration-500",
           isScrolled
-            ? "bg-coffee-800/95 backdrop-blur-md shadow-md"
-            : "bg-coffee-800/80 backdrop-blur-sm"
+            ? "bg-coffee-800 shadow-md"
+            : "bg-coffee-800"
         )}
       >
         <div className="container mx-auto px-4">
@@ -78,26 +78,26 @@ const Index = () => {
               className="group flex items-center"
             >
               <img 
-                src="/lovable-uploads/35066855-02c3-41e3-b125-d2cc0a2a5fe2.png" 
+                src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                 alt="Chocolateria Sabor e Prazer"
-                className="h-12 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                className="h-12 transition-all duration-300 group-hover:scale-105"
               />
             </a>
 
             <div className="hidden md:flex space-x-6">
-              <a href="#home" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#home" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Home
               </a>
-              <a href="#sobre" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#sobre" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Sobre
               </a>
-              <a href="#produtos" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#produtos" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Produtos
               </a>
-              <a href="#espaco" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#espaco" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Nosso Espaço
               </a>
-              <a href="#localizacao" className="nav-link text-white text-sm hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#localizacao" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
                 Localização
               </a>
             </div>
@@ -113,19 +113,19 @@ const Index = () => {
 
         <div
           className={cn(
-            "md:hidden fixed inset-0 bg-coffee-800/98 backdrop-blur-md transition-all duration-500 z-50",
+            "md:hidden fixed inset-0 bg-coffee-800 transition-all duration-500 z-50",
             isMenuOpen 
               ? "opacity-100 translate-y-0" 
               : "opacity-0 -translate-y-full pointer-events-none"
           )}
         >
           <div className="flex flex-col h-full">
-            <div className="flex items-center justify-between p-4 border-b border-coffee-700/30">
+            <div className="flex items-center justify-between p-4 border-b border-coffee-700">
               <a href="#" className="group">
                 <img 
-                  src="/lovable-uploads/35066855-02c3-41e3-b125-d2cc0a2a5fe2.png" 
+                  src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                   alt="Chocolateria Sabor e Prazer"
-                  className="h-10 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                  className="h-10 transition-all duration-300 group-hover:scale-105"
                 />
               </a>
               <button
@@ -174,7 +174,7 @@ const Index = () => {
               </a>
             </div>
 
-            <div className="p-4 border-t border-coffee-700/30">
+            <div className="p-4 border-t border-coffee-700">
               <div className="flex justify-center space-x-6">
                 <a 
                   href="https://facebook.com" 
