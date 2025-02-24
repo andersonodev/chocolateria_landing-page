@@ -80,7 +80,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                 alt="Chocolateria Sabor e Prazer"
-                className="h-12 transition-all duration-300 group-hover:scale-105"
+                className="h-14 transition-all duration-300 group-hover:scale-105"
               />
             </a>
 
@@ -125,7 +125,7 @@ const Index = () => {
                 <img 
                   src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                   alt="Chocolateria Sabor e Prazer"
-                  className="h-10 transition-all duration-300 group-hover:scale-105"
+                  className="h-12 transition-all duration-300 group-hover:scale-105"
                 />
               </a>
               <button
