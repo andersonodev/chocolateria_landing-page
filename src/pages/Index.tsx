@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -72,7 +71,7 @@ const Index = () => {
         )}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between min-h-[4.5rem]">
+          <div className="flex items-center justify-between min-h-[5rem]">
             <a 
               href="#" 
               className="group flex items-center -my-2"
@@ -80,7 +79,7 @@ const Index = () => {
               <img 
                 src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                 alt="Chocolateria Sabor e Prazer"
-                className="h-20 w-auto transition-all duration-300 group-hover:scale-105"
+                className="h-24 w-auto transition-all duration-300 group-hover:scale-105"
               />
             </a>
 
@@ -301,7 +300,7 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {products.map((product, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-                  <div className="relative overflow-hidden group aspect-[4/3]">
+                  <div className="relative overflow-hidden group aspect-video">
                     <img
                       src={product.image}
                       alt={product.name}
@@ -332,7 +331,7 @@ const Index = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {beverages.map((beverage, index) => (
                 <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
-                  <div className="relative overflow-hidden group aspect-[4/3]">
+                  <div className="relative overflow-hidden group aspect-video">
                     <img
                       src={beverage.image}
                       alt={beverage.name}
