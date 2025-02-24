@@ -103,7 +103,7 @@ const Index = () => {
             </div>
 
             <button
-              className="md:hidden text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
+              className="md:hidden text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110 p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -113,46 +113,95 @@ const Index = () => {
 
         <div
           className={cn(
-            "md:hidden absolute w-full bg-coffee-800/95 backdrop-blur-md transition-all duration-300",
-            isMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+            "md:hidden fixed inset-0 bg-coffee-800/98 backdrop-blur-md transition-all duration-500 z-50",
+            isMenuOpen 
+              ? "opacity-100 translate-y-0" 
+              : "opacity-0 -translate-y-full pointer-events-none"
           )}
         >
-          <div className="container mx-auto px-4 py-4 space-y-4">
-            <a
-              href="#home"
-              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </a>
-            <a
-              href="#sobre"
-              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Sobre
-            </a>
-            <a
-              href="#produtos"
-              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Produtos
-            </a>
-            <a
-              href="#espaco"
-              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Nosso Espaço
-            </a>
-            <a
-              href="#localizacao"
-              className="block text-white hover:text-coffee-200 text-sm transition-all duration-300 hover:translate-x-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Localização
-            </a>
+          <div className="flex flex-col h-full">
+            <div className="flex items-center justify-between p-4 border-b border-coffee-700/30">
+              <a href="#" className="group">
+                <img 
+                  src="/lovable-uploads/35066855-02c3-41e3-b125-d2cc0a2a5fe2.png" 
+                  alt="Chocolateria Sabor e Prazer"
+                  className="h-10 transition-all duration-300 group-hover:scale-105 group-hover:brightness-110"
+                />
+              </a>
+              <button
+                className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110 p-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <div className="flex flex-col items-center justify-center flex-grow gap-8 p-4">
+              <a
+                href="#home"
+                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </a>
+              <a
+                href="#sobre"
+                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sobre
+              </a>
+              <a
+                href="#produtos"
+                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Produtos
+              </a>
+              <a
+                href="#espaco"
+                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Nosso Espaço
+              </a>
+              <a
+                href="#localizacao"
+                className="text-white text-lg font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Localização
+              </a>
+            </div>
+
+            <div className="p-4 border-t border-coffee-700/30">
+              <div className="flex justify-center space-x-6">
+                <a 
+                  href="https://facebook.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
+                >
+                  <Facebook size={20} />
+                </a>
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
+                >
+                  <Instagram size={20} />
+                </a>
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
+                >
+                  <Youtube size={20} />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
