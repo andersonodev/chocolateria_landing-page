@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { scrollToElement } from "@/utils/scrollUtils";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -13,13 +14,10 @@ const Index = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      // Determina se deve mostrar a seta de voltar ao topo (após 300px)
       setShowScrollTop(currentScrollY > 300);
       
-      // Verifica se há scroll e aplica a classe para a navbar
       setIsScrolled(currentScrollY > 50);
       
-      // Lógica para esconder o menu na rolagem para baixo
       if (currentScrollY > 100) {
         const isScrollingDown = currentScrollY > prevScrollY.current;
         setHideNav(isScrollingDown);
@@ -39,6 +37,14 @@ const Index = () => {
       top: 0,
       behavior: "smooth"
     });
+  };
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault();
+    scrollToElement(targetId);
+    if (isMenuOpen) {
+      setIsMenuOpen(false);
+    }
   };
 
   const products = [
@@ -103,6 +109,7 @@ const Index = () => {
             <a 
               href="#" 
               className="group flex items-center -my-2"
+              onClick={(e) => handleNavClick(e, "home")}
             >
               <img 
                 src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
@@ -112,19 +119,19 @@ const Index = () => {
             </a>
 
             <div className="hidden md:flex space-x-8">
-              <a href="#home" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#home" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5" onClick={(e) => handleNavClick(e, "home")}>
                 Home
               </a>
-              <a href="#sobre" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#sobre" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5" onClick={(e) => handleNavClick(e, "sobre")}>
                 Sobre
               </a>
-              <a href="#produtos" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#produtos" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5" onClick={(e) => handleNavClick(e, "produtos")}>
                 Produtos
               </a>
-              <a href="#espaco" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#espaco" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5" onClick={(e) => handleNavClick(e, "espaco")}>
                 Nosso Espaço
               </a>
-              <a href="#localizacao" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5">
+              <a href="#localizacao" className="nav-link text-white text-sm font-medium hover:text-coffee-200 transition-all duration-300 transform hover:-translate-y-0.5" onClick={(e) => handleNavClick(e, "localizacao")}>
                 Localização
               </a>
             </div>
@@ -148,7 +155,7 @@ const Index = () => {
         >
           <div className="flex flex-col h-full">
             <div className="flex items-center justify-between p-4 border-b border-coffee-700">
-              <a href="#" className="group">
+              <a href="#" className="group" onClick={(e) => handleNavClick(e, "home")}>
                 <img 
                   src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
                   alt="Chocolateria Sabor e Prazer"
@@ -167,35 +174,45 @@ const Index = () => {
               <a
                 href="#home"
                 className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, "home");
+                }}
               >
                 Home
               </a>
               <a
                 href="#sobre"
                 className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, "sobre");
+                }}
               >
                 Sobre
               </a>
               <a
                 href="#produtos"
                 className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, "produtos");
+                }}
               >
                 Produtos
               </a>
               <a
                 href="#espaco"
                 className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, "espaco");
+                }}
               >
                 Nosso Espaço
               </a>
               <a
                 href="#localizacao"
                 className="text-white text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => {
+                  handleNavClick(e, "localizacao");
+                }}
               >
                 Localização
               </a>
