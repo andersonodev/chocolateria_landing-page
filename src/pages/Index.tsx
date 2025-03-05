@@ -1,18 +1,45 @@
-import { useState, useEffect } from "react";
-import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube, ChevronUp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+  const prevScrollY = useRef(0);
+  const [hideNav, setHideNav] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const currentScrollY = window.scrollY;
+      
+      // Determina se deve mostrar a seta de voltar ao topo (após 300px)
+      setShowScrollTop(currentScrollY > 300);
+      
+      // Verifica se há scroll e aplica a classe para a navbar
+      setIsScrolled(currentScrollY > 50);
+      
+      // Lógica para esconder o menu na rolagem para baixo
+      if (currentScrollY > 100) {
+        const isScrollingDown = currentScrollY > prevScrollY.current;
+        setHideNav(isScrollingDown);
+      } else {
+        setHideNav(false);
+      }
+      
+      prevScrollY.current = currentScrollY;
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   const products = [
     {
@@ -67,7 +94,8 @@ const Index = () => {
           "fixed w-full z-50 transition-all duration-500",
           isScrolled
             ? "bg-coffee-800 shadow-md"
-            : "bg-coffee-800"
+            : "bg-coffee-800",
+          hideNav && "transform -translate-y-full"
         )}
       >
         <div className="container mx-auto px-4">
@@ -204,6 +232,17 @@ const Index = () => {
           </div>
         </div>
       </nav>
+
+      <button
+        onClick={scrollToTop}
+        className={cn(
+          "fixed bottom-6 right-6 p-3 bg-coffee-700 text-white rounded-full shadow-lg z-50 transition-all duration-300 transform hover:scale-110",
+          showScrollTop ? "opacity-100" : "opacity-0 pointer-events-none"
+        )}
+        aria-label="Voltar ao topo"
+      >
+        <ChevronUp size={24} />
+      </button>
 
       <section
         id="home"
@@ -414,7 +453,7 @@ const Index = () => {
           <h2 className="font-serif text-5xl text-coffee-800 text-center mb-16">
             Localização
           </h2>
-          <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-12">
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-6">
                 <h3 className="font-serif text-3xl text-coffee-800">
@@ -443,7 +482,19 @@ const Index = () => {
                   </a>
                 </div>
               </div>
-              <div className="bg-chocolate-100 h-64 rounded-xl shadow-inner"></div>
+              <div className="rounded-xl overflow-hidden w-full h-full shadow-lg">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.5615608572666!2d-43.70549392468627!3d-22.74453203209242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x99574176ddaa05%3A0x75f1362fa8ff43bd!2sChocolateria%20Sabor%20e%20Prazer!5e0!3m2!1spt-BR!2sbr!4v1740412609192!5m2!1spt-BR!2sbr" 
+                  width="100%" 
+                  height="100%" 
+                  style={{ border: 0, minHeight: "300px" }} 
+                  allowFullScreen 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização da Chocolateria Sabor e Prazer"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>
