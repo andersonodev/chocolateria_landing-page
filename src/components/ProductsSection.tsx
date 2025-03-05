@@ -51,16 +51,16 @@ const ProductsSection = () => {
   return (
     <section
       id="produtos"
-      className="py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-chocolate-50 relative"
+      className="py-8 sm:py-12 md:py-16 lg:py-24 bg-gradient-to-b from-white to-chocolate-50 relative"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-coffee-800 text-center mb-10 md:mb-16">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif text-coffee-800 text-center mb-6 sm:mb-8 md:mb-10 lg:mb-16">
           Nossos Produtos
         </h2>
         
-        <div className="mb-10 md:mb-16">
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-serif text-coffee-700 mb-6 md:mb-8 text-center">Doces e Tortas</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="mb-6 sm:mb-8 md:mb-12 lg:mb-16">
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif text-coffee-700 mb-4 sm:mb-5 md:mb-6 lg:mb-8 text-center">Doces e Tortas</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {products.map((product, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
                 <div className="relative overflow-hidden group aspect-video">
@@ -69,18 +69,18 @@ const ProductsSection = () => {
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 md:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3 sm:p-4 md:p-6">
                     <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <CakeSlice className="w-6 h-6 md:w-8 md:h-8 mb-1 md:mb-2 mx-auto" />
-                      <p className="text-sm md:text-base font-medium">Ver Detalhes</p>
+                      <CakeSlice className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 mb-1 md:mb-2 mx-auto" />
+                      <p className="text-xs sm:text-sm md:text-base font-medium">Ver Detalhes</p>
                     </div>
                   </div>
                 </div>
-                <div className="p-4 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-serif text-coffee-800 mb-1 md:mb-2">
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-coffee-800 mb-0.5 sm:mb-1 md:mb-2">
                     {product.name}
                   </h3>
-                  <p className="text-sm md:text-base text-coffee-600">
+                  <p className="text-xs sm:text-sm md:text-base text-coffee-600">
                     {product.description}
                   </p>
                 </div>
@@ -90,8 +90,8 @@ const ProductsSection = () => {
         </div>
 
         <div>
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-serif text-coffee-700 mb-6 md:mb-8 text-center">Bebidas Especiais</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif text-coffee-700 mb-4 sm:mb-5 md:mb-6 lg:mb-8 text-center">Bebidas Especiais</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 lg:gap-8">
             {beverages.map((beverage, index) => (
               <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover">
                 <div className="relative overflow-hidden group aspect-video">
@@ -100,18 +100,18 @@ const ProductsSection = () => {
                     alt={beverage.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 md:p-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-3 sm:p-4 md:p-6">
                     <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                      <Coffee className="w-6 h-6 md:w-8 md:h-8 mb-1 md:mb-2 mx-auto" />
-                      <p className="text-sm md:text-base font-medium">Ver Detalhes</p>
+                      <Coffee className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8 mb-1 md:mb-2 mx-auto" />
+                      <p className="text-xs sm:text-sm md:text-base font-medium">Ver Detalhes</p>
                     </div>
                   </div>
                 </div>
-                <div className="p-4 md:p-6">
-                  <h3 className="text-xl md:text-2xl font-serif text-coffee-800 mb-1 md:mb-2">
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-serif text-coffee-800 mb-0.5 sm:mb-1 md:mb-2">
                     {beverage.name}
                   </h3>
-                  <p className="text-sm md:text-base text-coffee-600">
+                  <p className="text-xs sm:text-sm md:text-base text-coffee-600">
                     {beverage.description}
                   </p>
                 </div>

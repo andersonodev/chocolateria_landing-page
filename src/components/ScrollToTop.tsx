@@ -32,7 +32,7 @@ const ScrollToTop = () => {
       )}
       aria-label="Voltar ao topo"
     >
-      <ChevronUp size={20} className="md:w-5 md:h-5" />
+      <ChevronUp size={20} className="w-4 h-4 md:w-5 md:h-5" />
     </button>
   );
 };

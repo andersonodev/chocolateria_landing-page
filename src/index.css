@@ -37,19 +37,19 @@
   }
   
   h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif;
   }
   
   h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-serif;
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif;
   }
   
   h3 {
-    @apply text-xl md:text-2xl lg:text-3xl font-serif;
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif;
   }
   
   p {
-    @apply text-sm md:text-base lg:text-lg;
+    @apply text-xs sm:text-sm md:text-base lg:text-lg;
   }
   
   .nav-link {
