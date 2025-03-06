@@ -1,0 +1,62 @@
+
+.hero-gradient {
+  background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  to {
+    left: 100%;
+  }
+}
+
+.tilt-on-hover {
+  transition: transform 0.5s ease;
+}
+
+.tilt-on-hover:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(5deg) scale(1.05);
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 640px) {
+  .mobile-card {
+    @apply p-4;
+  }
+  
+  .mobile-icon {
+    @apply w-5 h-5;
+  }
+  
+  .mobile-padding {
+    @apply py-12 px-4;
+  }
+  
+  .mobile-text-center {
+    @apply text-center;
+  }
+}
