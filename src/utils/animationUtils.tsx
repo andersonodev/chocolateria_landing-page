@@ -1,5 +1,5 @@
 
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 /**
  * Hook to detect when an element is visible in the viewport
@@ -35,18 +35,18 @@ export const useElementOnScreen = (options?: IntersectionObserverInit) => {
 /**
  * Component to wrap elements with animation on scroll
  */
-export const AnimateOnScroll = ({ 
-  children, 
-  animation = 'fade-in', 
-  threshold = 0.1,
-  rootMargin = '0px',
-  className = '',
-}: { 
+export const AnimateOnScroll: React.FC<{ 
   children: React.ReactNode; 
   animation?: string;
   threshold?: number;
   rootMargin?: string;
   className?: string;
+}> = ({ 
+  children, 
+  animation = 'fade-in', 
+  threshold = 0.1,
+  rootMargin = '0px',
+  className = '',
 }) => {
   const { containerRef, isVisible } = useElementOnScreen({
     threshold,
