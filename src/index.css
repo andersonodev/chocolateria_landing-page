@@ -44,6 +44,22 @@
   .nav-link:hover::after {
     @apply scale-x-100 origin-bottom-left;
   }
+  
+  h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif;
+  }
+  
+  h2 {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif;
+  }
+  
+  h3 {
+    @apply text-xl sm:text-2xl md:text-3xl font-serif;
+  }
+  
+  p {
+    @apply text-sm sm:text-base md:text-lg;
+  }
 }
 
 .fade-in {
@@ -91,4 +107,23 @@
 .card-hover:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Mobile Specific Adjustments */
+@media (max-width: 640px) {
+  .mobile-card {
+    @apply p-4;
+  }
+  
+  .mobile-icon {
+    @apply w-5 h-5;
+  }
+  
+  .mobile-padding {
+    @apply py-12 px-4;
+  }
+  
+  .mobile-text-center {
+    @apply text-center;
+  }
 }
