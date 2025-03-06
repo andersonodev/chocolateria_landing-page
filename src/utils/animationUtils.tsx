@@ -41,12 +41,14 @@ export const AnimateOnScroll: React.FC<{
   threshold?: number;
   rootMargin?: string;
   className?: string;
+  style?: React.CSSProperties;
 }> = ({ 
   children, 
   animation = 'fade-in', 
   threshold = 0.1,
   rootMargin = '0px',
   className = '',
+  style = {},
 }) => {
   const { containerRef, isVisible } = useElementOnScreen({
     threshold,
@@ -59,7 +61,8 @@ export const AnimateOnScroll: React.FC<{
       className={`${className} ${isVisible ? animation : 'opacity-0'}`}
       style={{ 
         transition: 'opacity 0.4s ease-out', 
-        willChange: 'opacity, transform' 
+        willChange: 'opacity, transform',
+        ...style
       }}
     >
       {children}
