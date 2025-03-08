@@ -1,6 +1,6 @@
 
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube, ChevronUp, Star, Calendar, Gift, ArrowRight, Quote, MessageCircle } from "lucide-react";
+import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube, ChevronUp, Star, Calendar, Gift, ArrowRight, Quote, MessageCircle, Mail, Phone } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { scrollToElement } from "@/utils/scrollUtils";
 
@@ -11,6 +11,7 @@ const Index = () => {
   const prevScrollY = useRef(0);
   const [hideNav, setHideNav] = useState(false);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [subscribed, setSubscribed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -55,6 +56,12 @@ const Index = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
+  };
+  
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubscribed(true);
+    setTimeout(() => setSubscribed(false), 3000);
   };
 
   const products = [
@@ -116,13 +123,13 @@ const Index = () => {
     {
       name: "Café Especial",
       description: "Café premium com notas de chocolate",
-      image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-1.2.1&w=500",
+      image: "/lovable-uploads/958b4a27-5aea-49bb-bf36-6764a52b1834.png",
       price: "R$ 9,90"
     },
     {
       name: "Chocolate com Menta",
       description: "Bebida quente de chocolate com toque de menta",
-      image: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?ixlib=rb-1.2.1&w=500",
+      image: "/lovable-uploads/35066855-02c3-41e3-b125-d2cc0a2a5fe2.png",
       price: "R$ 17,90",
       tag: "Novidade"
     }
@@ -161,6 +168,12 @@ const Index = () => {
       date: "28 de Outubro",
       description: "Uma noite especial com nossos chocolates mais exclusivos",
       image: "https://images.unsplash.com/photo-1549007994-cb92caebd54b?ixlib=rb-1.2.1&w=500"
+    },
+    {
+      title: "Festival de Chocolate",
+      date: "10 de Novembro",
+      description: "Uma celebração com todas as nossas variedades de chocolate",
+      image: "https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&w=500"
     }
   ];
 
@@ -172,9 +185,26 @@ const Index = () => {
     "https://images.unsplash.com/photo-1526081347589-7fa3cb873804?ixlib=rb-1.2.1&w=600",
     "https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-1.2.1&w=600"
   ];
+  
+  const specialProducts = [
+    {
+      name: "Caixa Presente Premium",
+      description: "Seleção especial com 12 chocolates sortidos",
+      image: "https://images.unsplash.com/photo-1549007953-2f2dc0b24019?ixlib=rb-1.2.1&w=500",
+      price: "R$ 89,90"
+    },
+    {
+      name: "Chocolate Bean-to-Bar",
+      description: "Produzido com seleção especial de cacau brasileiro",
+      image: "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&w=500",
+      price: "R$ 29,90",
+      tag: "Origem Controlada"
+    }
+  ];
 
   return (
     <div className="min-h-screen">
+      {/* Header/Navigation */}
       <nav
         className={cn(
           "fixed w-full z-50 transition-all duration-500",
@@ -228,12 +258,14 @@ const Index = () => {
             <button
               className="md:hidden text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110 p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
 
+        {/* Mobile Menu */}
         <div
           className={cn(
             "md:hidden fixed inset-0 bg-coffee-800 transition-all duration-500 z-50",
@@ -254,6 +286,7 @@ const Index = () => {
               <button
                 className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110 p-2"
                 onClick={() => setIsMenuOpen(false)}
+                aria-label="Fechar menu"
               >
                 <X size={22} />
               </button>
@@ -341,6 +374,7 @@ const Index = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
+                  aria-label="Facebook"
                 >
                   <Facebook size={20} className="sm:w-6 sm:h-6" />
                 </a>
@@ -349,6 +383,7 @@ const Index = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
+                  aria-label="Instagram"
                 >
                   <Instagram size={20} className="sm:w-6 sm:h-6" />
                 </a>
@@ -357,6 +392,7 @@ const Index = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-white hover:text-coffee-200 transition-all duration-300 transform hover:scale-110"
+                  aria-label="Youtube"
                 >
                   <Youtube size={20} className="sm:w-6 sm:h-6" />
                 </a>
@@ -366,6 +402,7 @@ const Index = () => {
         </div>
       </nav>
 
+      {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
         className={cn(
@@ -377,6 +414,7 @@ const Index = () => {
         <ChevronUp size={20} className="sm:w-6 sm:h-6" />
       </button>
 
+      {/* Hero Section */}
       <section
         id="home"
         className="min-h-screen w-full flex items-center justify-center hero-gradient relative overflow-hidden pt-20 sm:pt-24"
@@ -432,6 +470,7 @@ const Index = () => {
         <div className="absolute bottom-0 left-0 w-full h-16 sm:h-24 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
+      {/* About Section */}
       <section
         id="sobre"
         className="py-16 sm:py-24 md:py-32 bg-white relative overflow-hidden"
@@ -530,6 +569,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Products Section */}
       <section
         id="produtos"
         className="py-20 sm:py-28 bg-gradient-to-b from-white to-chocolate-50 relative"
@@ -546,6 +586,55 @@ const Index = () => {
             </p>
           </div>
           
+          {/* Special Products */}
+          <div className="mb-16 sm:mb-24">
+            <div className="flex justify-between items-center mb-8">
+              <h3 className="text-coffee-700 text-2xl sm:text-3xl font-serif">Especiais da Casa</h3>
+              <a href="#" className="flex items-center text-coffee-600 hover:text-coffee-800 transition-colors text-sm sm:text-base">
+                Ver todos <ArrowRight className="ml-1 w-4 h-4" />
+              </a>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+              {specialProducts.map((product, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden card-hover relative group">
+                  {product.tag && (
+                    <div className="absolute top-4 right-4 z-20 bg-coffee-700 text-white text-xs font-bold px-3 py-1 rounded-full">
+                      {product.tag}
+                    </div>
+                  )}
+                  <div className="flex flex-col sm:flex-row h-full">
+                    <div className="sm:w-2/5 overflow-hidden">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-full h-48 sm:h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    </div>
+                    <div className="p-5 sm:p-6 sm:w-3/5 flex flex-col justify-between">
+                      <div>
+                        <h3 className="text-xl sm:text-2xl text-coffee-800 font-serif mb-2">
+                          {product.name}
+                        </h3>
+                        <p className="text-sm sm:text-base text-coffee-600 mb-4">
+                          {product.description}
+                        </p>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <div className="text-lg sm:text-xl text-coffee-700 font-bold">
+                          {product.price}
+                        </div>
+                        <button className="py-2 px-4 bg-coffee-700 text-white rounded-lg hover:bg-coffee-800 transition-colors text-sm font-medium">
+                          Adicionar ao Pedido
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          {/* Sweets and Pies */}
           <div className="mb-16 sm:mb-24">
             <div className="flex justify-between items-center mb-8">
               <h3 className="text-coffee-700 text-2xl sm:text-3xl font-serif">Doces e Tortas</h3>
@@ -595,6 +684,7 @@ const Index = () => {
             </div>
           </div>
 
+          {/* Beverages */}
           <div>
             <div className="flex justify-between items-center mb-8">
               <h3 className="text-coffee-700 text-2xl sm:text-3xl font-serif">Bebidas Especiais</h3>
@@ -646,6 +736,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Events Section */}
       <section
         id="eventos"
         className="py-20 sm:py-28 bg-white relative"
@@ -662,17 +753,17 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {events.map((event, index) => (
-              <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden card-hover border border-coffee-100 flex flex-col sm:flex-row">
-                <div className="sm:w-2/5 overflow-hidden">
+              <div key={index} className="bg-white rounded-2xl shadow-xl overflow-hidden card-hover border border-coffee-100 flex flex-col">
+                <div className="overflow-hidden">
                   <img
                     src={event.image}
                     alt={event.title}
-                    className="w-full h-48 sm:h-full object-cover hover:scale-110 transition-transform duration-500"
+                    className="w-full h-48 object-cover hover:scale-110 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6 sm:w-3/5 flex flex-col justify-between">
+                <div className="p-6 flex flex-col justify-between flex-grow">
                   <div>
                     <div className="flex items-center mb-3">
                       <Calendar className="w-5 h-5 text-coffee-600 mr-2" />
@@ -681,7 +772,7 @@ const Index = () => {
                     <h3 className="text-xl sm:text-2xl text-coffee-800 mb-2 font-serif">{event.title}</h3>
                     <p className="text-coffee-600 text-sm mb-4">{event.description}</p>
                   </div>
-                  <button className="bg-coffee-700 text-white py-2 px-4 rounded-lg hover:bg-coffee-800 transition-colors inline-flex items-center justify-center text-sm">
+                  <button className="bg-coffee-700 text-white py-2 px-4 rounded-lg hover:bg-coffee-800 transition-colors inline-flex items-center justify-center text-sm mt-auto">
                     <Gift className="mr-2 w-4 h-4" /> Garanta sua Vaga
                   </button>
                 </div>
@@ -699,6 +790,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Gallery Section */}
       <section
         id="galeria"
         className="py-20 sm:py-28 bg-chocolate-50 relative"
@@ -741,7 +833,9 @@ const Index = () => {
 
           <div className="mt-12 text-center">
             <a 
-              href="#" 
+              href="https://instagram.com" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-6 py-3 bg-white text-coffee-700 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:bg-coffee-50 text-sm sm:text-base font-medium"
             >
               <Instagram className="mr-2 w-5 h-5" /> Siga-nos no Instagram
@@ -750,6 +844,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
       <section
         id="depoimentos"
         className="py-20 sm:py-28 bg-white relative overflow-hidden"
@@ -825,6 +920,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Our Space Section */}
       <section
         id="espaco"
         className="py-20 sm:py-28 bg-gradient-to-b from-white to-coffee-50"
@@ -940,6 +1036,7 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Location Section */}
       <section
         id="localizacao"
         className="py-20 sm:py-28 bg-chocolate-50"
@@ -990,9 +1087,7 @@ const Index = () => {
                   </div>
                   
                   <div className="flex items-start space-x-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 flex-shrink-0 text-coffee-600 mt-1">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
+                    <Phone className="w-6 h-6 flex-shrink-0 text-coffee-600 mt-1" />
                     <div>
                       <p className="font-medium text-coffee-700">Contato:</p>
                       <a
@@ -1051,7 +1146,159 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-12 sm:py-16 bg-coffee-800 text-white">
+      {/* Contact Section */}
+      <section
+        id="contato"
+        className="py-20 sm:py-28 bg-coffee-800 text-white"
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <div className="inline-block px-3 py-1 bg-coffee-100/20 text-white rounded-full text-sm font-medium mb-4">Fale Conosco</div>
+            <h2 className="text-white mb-4 sm:mb-6">
+              Entre em Contato
+            </h2>
+            <p className="text-coffee-100">
+              Estamos sempre disponíveis para ajudar! Preencha o formulário abaixo ou use nossos
+              canais de contato para tirar dúvidas, fazer pedidos ou sugestões.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-start">
+              <div className="md:col-span-2 space-y-6">
+                <div className="bg-coffee-700/50 backdrop-blur-sm rounded-xl p-6 border border-coffee-600">
+                  <h3 className="text-xl font-serif mb-4">Informações de Contato</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <Phone className="w-5 h-5 text-coffee-200 mt-1 mr-3 flex-shrink-0" />
+                      <div>
+                        <p className="text-coffee-100 font-medium mb-1">Telefone:</p>
+                        <a href="tel:+551199999999" className="text-white hover:text-coffee-200 transition-colors">
+                          (11) 9999-9999
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <Mail className="w-5 h-5 text-coffee-200 mt-1 mr-3 flex-shrink-0" />
+                      <div>
+                        <p className="text-coffee-100 font-medium mb-1">Email:</p>
+                        <a href="mailto:contato@saboreprazer.com" className="text-white hover:text-coffee-200 transition-colors">
+                          contato@saboreprazer.com
+                        </a>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <MapPin className="w-5 h-5 text-coffee-200 mt-1 mr-3 flex-shrink-0" />
+                      <div>
+                        <p className="text-coffee-100 font-medium mb-1">Endereço:</p>
+                        <p className="text-white">
+                          Rua das Delícias, 123 <br />
+                          Bairro do Sabor, Cidade
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <Clock className="w-5 h-5 text-coffee-200 mt-1 mr-3 flex-shrink-0" />
+                      <div>
+                        <p className="text-coffee-100 font-medium mb-1">Horário:</p>
+                        <p className="text-white">
+                          Segunda a Sábado: 9h às 20h <br />
+                          Domingo: 10h às 18h
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-6 pt-6 border-t border-coffee-600">
+                    <p className="text-coffee-100 mb-4">Siga-nos nas redes sociais:</p>
+                    <div className="flex space-x-4">
+                      <a 
+                        href="https://facebook.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-coffee-600 p-2 rounded-full text-white hover:bg-coffee-500 transition-colors"
+                      >
+                        <Facebook size={18} />
+                      </a>
+                      <a 
+                        href="https://instagram.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-coffee-600 p-2 rounded-full text-white hover:bg-coffee-500 transition-colors"
+                      >
+                        <Instagram size={18} />
+                      </a>
+                      <a 
+                        href="https://youtube.com" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="bg-coffee-600 p-2 rounded-full text-white hover:bg-coffee-500 transition-colors"
+                      >
+                        <Youtube size={18} />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="md:col-span-3">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-white/20">
+                  <h3 className="text-xl font-serif mb-6">Envie uma Mensagem</h3>
+                  <form className="space-y-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-coffee-100 mb-1">Nome</label>
+                        <input 
+                          type="text" 
+                          id="name" 
+                          className="w-full px-4 py-2 bg-white/10 border border-coffee-600 rounded-lg text-white placeholder-coffee-200/70 focus:outline-none focus:ring-2 focus:ring-coffee-300 focus:border-transparent transition-all"
+                          placeholder="Seu nome"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-coffee-100 mb-1">Email</label>
+                        <input 
+                          type="email" 
+                          id="email" 
+                          className="w-full px-4 py-2 bg-white/10 border border-coffee-600 rounded-lg text-white placeholder-coffee-200/70 focus:outline-none focus:ring-2 focus:ring-coffee-300 focus:border-transparent transition-all"
+                          placeholder="seu@email.com"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="subject" className="block text-sm font-medium text-coffee-100 mb-1">Assunto</label>
+                      <input 
+                        type="text" 
+                        id="subject" 
+                        className="w-full px-4 py-2 bg-white/10 border border-coffee-600 rounded-lg text-white placeholder-coffee-200/70 focus:outline-none focus:ring-2 focus:ring-coffee-300 focus:border-transparent transition-all"
+                        placeholder="Assunto da mensagem"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-coffee-100 mb-1">Mensagem</label>
+                      <textarea 
+                        id="message" 
+                        rows={4} 
+                        className="w-full px-4 py-2 bg-white/10 border border-coffee-600 rounded-lg text-white placeholder-coffee-200/70 focus:outline-none focus:ring-2 focus:ring-coffee-300 focus:border-transparent transition-all resize-none"
+                        placeholder="Sua mensagem"
+                      ></textarea>
+                    </div>
+                    <button 
+                      type="submit" 
+                      className="px-6 py-3 bg-coffee-600 text-white rounded-lg hover:bg-coffee-500 transition-colors w-full sm:w-auto"
+                    >
+                      Enviar Mensagem
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-12 sm:py-16 bg-coffee-900 text-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-6xl mx-auto">
             <div className="text-center md:text-left">
@@ -1116,53 +1363,34 @@ const Index = () => {
             </div>
             
             <div className="text-center md:text-left">
-              <h4 className="font-serif text-xl mb-6 font-medium">Contato</h4>
-              <div className="space-y-3 text-coffee-100">
-                <p className="flex items-center justify-center md:justify-start">
-                  <MapPin className="w-5 h-5 mr-3 flex-shrink-0" />
-                  <span>Rua das Delícias, 123, Bairro do Sabor</span>
+              <h4 className="font-serif text-xl mb-6 font-medium">Newsletter</h4>
+              <p className="text-coffee-100 mb-4">
+                Inscreva-se para receber nossas novidades, promoções e eventos exclusivos.
+              </p>
+              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+                <input
+                  type="email"
+                  placeholder="Seu e-mail"
+                  className="px-4 py-2 bg-coffee-700 text-white placeholder-coffee-200/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-200 flex-grow text-sm"
+                  required
+                />
+                <button 
+                  type="submit" 
+                  className="bg-coffee-600 hover:bg-coffee-500 text-white px-4 py-2 rounded-lg transition-colors text-sm"
+                >
+                  {subscribed ? "Inscrito!" : "Assinar"}
+                </button>
+              </form>
+              <div className="mt-8">
+                <p className="text-coffee-300/60 text-xs">
+                  &copy; 2024 Chocolateria Sabor e Prazer. <br />
+                  Todos os direitos reservados.
                 </p>
-                <p className="flex items-center justify-center md:justify-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mr-3 flex-shrink-0">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  <span>(11) 9999-9999</span>
-                </p>
-                <p className="flex items-center justify-center md:justify-start">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mr-3 flex-shrink-0">
-                    <rect width="20" height="16" x="2" y="4" rx="2" />
-                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-                  </svg>
-                  <span>contato@saboreprazer.com</span>
-                </p>
-                <p className="flex items-center justify-center md:justify-start">
-                  <Clock className="w-5 h-5 mr-3 flex-shrink-0" />
-                  <span>Seg-Sáb: 9h-20h | Dom: 10h-18h</span>
-                </p>
-              </div>
-              
-              <div className="mt-6">
-                <form className="flex flex-col sm:flex-row gap-3">
-                  <input
-                    type="email"
-                    placeholder="Seu e-mail"
-                    className="px-4 py-2 bg-coffee-700 text-white placeholder-coffee-200/80 rounded-lg focus:outline-none focus:ring-2 focus:ring-coffee-200 flex-grow text-sm"
-                    required
-                  />
-                  <button type="submit" className="bg-coffee-600 hover:bg-coffee-500 text-white px-4 py-2 rounded-lg transition-colors text-sm">
-                    Assinar Newsletter
-                  </button>
-                </form>
               </div>
             </div>
           </div>
-          
-          <div className="border-t border-coffee-700/50 mt-12 sm:mt-16 pt-8 text-center">
-            <p className="text-coffee-200 text-sm">&copy; 2024 Chocolateria Sabor e Prazer. Todos os direitos reservados.</p>
-            <p className="text-coffee-300/60 text-xs mt-2">Desenvolvido com ♥ para os amantes de chocolate</p>
-          </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 };
