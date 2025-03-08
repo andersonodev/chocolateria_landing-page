@@ -1,4 +1,4 @@
-<lov-code>
+
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, Coffee, MapPin, CakeSlice, Clock, GlassWater, Facebook, Instagram, Youtube, ChevronUp, Star, Calendar, Gift, ArrowRight, Quote, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -550,4 +550,38 @@ const Index = () => {
                       src={beverage.image}
                       alt={beverage.name}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-4 sm:p-6">
+                      <div className="text-white text-center transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        <Coffee className="w-6 h-6 sm:w-8 sm:h-8 mb-1 sm:mb-2 mx-auto" />
+                        <p className="text-sm sm:text-base font-medium">Ver Detalhes</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-5 sm:p-6">
+                    <div className="flex justify-between items-start mb-2">
+                      <h3 className="text-xl sm:text-2xl text-coffee-800 font-serif">
+                        {beverage.name}
+                      </h3>
+                      <div className="text-lg sm:text-xl text-coffee-700 font-bold">
+                        {beverage.price}
+                      </div>
+                    </div>
+                    <p className="text-sm sm:text-base text-coffee-600 mb-4">
+                      {beverage.description}
+                    </p>
+                    <button className="w-full py-2 bg-coffee-100 text-coffee-800 rounded-lg hover:bg-coffee-200 transition-colors text-sm font-medium">
+                      Adicionar ao Pedido
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default Index;
