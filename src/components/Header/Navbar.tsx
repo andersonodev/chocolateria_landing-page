@@ -102,14 +102,15 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "md:hidden fixed inset-0 bg-coffee-800 transition-all duration-500 z-50",
+          "md:hidden fixed inset-0 bg-coffee-800 transition-all duration-500 z-50 mobile-menu-container",
           isMenuOpen 
             ? "opacity-100 translate-y-0" 
             : "opacity-0 -translate-y-full pointer-events-none"
         )}
+        style={{ backgroundColor: "#5d4037" }}
       >
-        <div className="flex flex-col h-full bg-coffee-800">
-          <div className="flex items-center justify-between p-4 border-b border-coffee-700 bg-coffee-800">
+        <div className="flex flex-col h-full bg-coffee-800" style={{ backgroundColor: "#5d4037" }}>
+          <div className="flex items-center justify-between p-4 border-b border-coffee-700 bg-coffee-800 mobile-menu-header" style={{ backgroundColor: "#5d4037" }}>
             <a href="#" className="group" onClick={(e) => handleNavClick(e, "home")}>
               <img 
                 src="/lovable-uploads/6977c981-c31d-48f2-a304-7c2c508c6850.png" 
@@ -126,7 +127,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="flex flex-col items-center justify-center flex-grow gap-6 sm:gap-8 p-4 overflow-auto bg-coffee-800 mobile-menu-content">
+          <div className="flex flex-col items-center justify-center flex-grow gap-6 sm:gap-8 p-4 overflow-auto bg-coffee-800 mobile-menu-content" style={{ backgroundColor: "#5d4037" }}>
             <a
               href="#home"
               className="text-white text-lg sm:text-xl font-medium hover:text-coffee-200 transition-all duration-300 transform hover:scale-105"
@@ -201,7 +202,7 @@ const Navbar = () => {
             </a>
           </div>
 
-          <div className="p-4 sm:p-6 border-t border-coffee-700 bg-coffee-800 mobile-menu-footer">
+          <div className="p-4 sm:p-6 border-t border-coffee-700 bg-coffee-800 mobile-menu-footer" style={{ backgroundColor: "#5d4037" }}>
             <div className="flex justify-center space-x-6 sm:space-x-8">
               <a 
                 href="https://facebook.com" 

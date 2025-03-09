@@ -117,12 +117,25 @@
   
   .mobile-menu-container {
     background-color: #5d4037 !important;
+    opacity: 1 !important;
   }
   
   .mobile-menu-header,
   .mobile-menu-content,
   .mobile-menu-footer {
     background-color: #5d4037 !important;
+  }
+  
+  /* Ensure the mobile menu wrapper is opaque */
+  .md\:hidden.fixed.inset-0.bg-coffee-800 {
+    background-color: #5d4037 !important;
+    opacity: 1 !important;
+  }
+  
+  /* Ensure flex container in mobile menu is opaque */
+  .flex.flex-col.h-full.bg-coffee-800 {
+    background-color: #5d4037 !important;
+    opacity: 1 !important;
   }
 }
 
