@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Calendar, ArrowRight } from "lucide-react";
 
@@ -35,6 +34,10 @@ const EventsSection: React.FC<EventsSectionProps> = ({ events }) => {
                   src={event.image} 
                   alt={event.title}
                   className="w-full h-48 sm:h-56 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=600";
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
                   <div className="p-4 sm:p-6 text-white">

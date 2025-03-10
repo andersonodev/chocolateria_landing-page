@@ -28,6 +28,10 @@ const GallerySection: React.FC<GallerySectionProps> = ({ galleryImages }) => {
                 src={image} 
                 alt={`Galeria imagem ${index + 1}`}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=600";
+                }}
               />
             </div>
           ))}

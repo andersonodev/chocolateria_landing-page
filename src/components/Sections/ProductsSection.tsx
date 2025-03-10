@@ -38,6 +38,10 @@ const ProductsSection: React.FC<ProductsSectionProps> = ({ products, beverages, 
                   src={product.image} 
                   alt={product.name}
                   className="w-full h-56 sm:h-64 object-cover"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=600";
+                  }}
                 />
                 {product.tag && (
                   <div className="absolute top-4 right-4 bg-coffee-700 text-white px-3 py-1 rounded-full text-xs font-medium">

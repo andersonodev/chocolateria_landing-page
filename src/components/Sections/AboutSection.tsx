@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Coffee, Clock } from "lucide-react";
 
@@ -14,7 +13,7 @@ const AboutSection: React.FC = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-gradient-to-tr from-coffee-200 to-coffee-100 rounded-2xl transform -rotate-3"></div>
             <img 
-              src="https://images.unsplash.com/photo-1542992015-2a2077932ce9?ixlib=rb-1.2.1&w=800" 
+              src="https://images.unsplash.com/photo-1493925410384-84f842e616fb?ixlib=rb-1.2.1&w=800" 
               alt="Nossa História" 
               className="relative z-10 w-full h-[400px] sm:h-[500px] object-cover rounded-xl shadow-xl"
             />
