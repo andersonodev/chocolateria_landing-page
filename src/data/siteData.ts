@@ -1,4 +1,3 @@
-
 export const products = [
   {
     name: "Chocolate Quente Especial",
@@ -113,12 +112,12 @@ export const events = [
 ];
 
 export const galleryImages = [
-  "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?ixlib=rb-1.2.1&auto=format&fit=crop&w=600",
+  "https://images.unsplash.com/photo-1606420187129-cda848991460?ixlib=rb-1.2.1&auto=format&fit=crop&w=600",
   "https://images.unsplash.com/photo-1606312619070-d48b4c652a52?ixlib=rb-1.2.1&auto=format&fit=crop&w=600",
-  "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600",
-  "https://images.unsplash.com/photo-1606170033648-5d55a3edf314?ixlib=rb-1.2.1&auto=format&fit=crop&w=600", 
+  "https://images.unsplash.com/photo-1582176604856-e824b4736522?ixlib=rb-1.2.1&auto=format&fit=crop&w=600",
+  "https://images.unsplash.com/photo-1587132137056-bfbf0166836e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600",
   "https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=600",
-  "https://images.unsplash.com/photo-1426515844349-252b80bd8b6d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600"
+  "https://images.unsplash.com/photo-1511381939415-e44015466834?ixlib=rb-1.2.1&auto=format&fit=crop&w=600"
 ];
 
 export const specialProducts = [
