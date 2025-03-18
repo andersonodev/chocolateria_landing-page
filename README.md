@@ -15,19 +15,14 @@ A página é desenvolvida com tecnologias modernas e responsivas, garantindo uma
 ## 🎨 Tecnologias Utilizadas  
 
 - **HTML5** + **CSS3**  
-- **JavaScript**  
+- **JavaScript**
+- **TypeScript**   
 - **Bootstrap** (para design responsivo)  
-- **Font Awesome** (ícones personalizados)  
+- **Font Awesome** (ícones personalizados)
 
 ## 🔥 Funcionalidades  
 
 ✔️ Apresentação dos nossos produtos premium  
 ✔️ Seção sobre a história da Chocolateria Sabor e Prazer  
 ✔️ Formulário de contato para pedidos e dúvidas  
-✔️ Links para redes sociais  
-
-## 🛠️ Como Rodar o Projeto  
-
-1. Clone o repositório:  
-   ```sh
-   git clone 
+✔️ Links para redes sociais 
