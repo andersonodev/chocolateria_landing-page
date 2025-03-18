@@ -1,11 +1,5 @@
 # 🍫 Chocolateria Sabor e Prazer
 
-Bem-vindo à **Chocolateria Sabor e Prazer**, onde cada mordida é uma experiência inesquecível! 🍬✨  
-
-Nossa missão é oferecer chocolates artesanais de alta qualidade, feitos com ingredientes selecionados e muito amor.  
-
-🌟 **Descubra nossos sabores únicos!** 🌟  
-
 ## 🚀 Sobre o Projeto  
 
 Este repositório contém o código-fonte da nossa **Landing Page**, criada para apresentar nossos produtos e conectar os amantes de chocolate ao nosso universo doce.  
